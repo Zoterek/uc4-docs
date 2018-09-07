@@ -31,15 +31,18 @@ export default {
     return {
       items: [
         { text: "Getting Started", to: "/" },
+        { text: "Configuration Generator", to: "/uc4configgen" },
         { text: "Configuration",
           children: [
-            { text: "config.json", to: "/configuration/config" },
-            { text: "filter.json", to: "/configuration/filter" }
+            { text: "uc4.config", to: "/configuration/uc4config" },
+            { text: "config.json (deprecated)", to: "/configuration/config_deprecated" },
+            { text: "filter.json (deprecated)", to: "/configuration/filter_deprecated" }
           ] },
         { text: "Tools",
           children: [
+            { text: "uc4_addUserToGroup" },
             { text: "uc4_search" },
-            { text: "uc4_regex_replace" }
+            { text: "uc4_regexReplace" }
           ]
         }
       ],
