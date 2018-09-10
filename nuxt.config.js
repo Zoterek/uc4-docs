@@ -1,7 +1,7 @@
 
 module.exports = {
   router: {
-    base: '/docs/'
+    base: '/'
   },
   /*
   ** Headers of the page
