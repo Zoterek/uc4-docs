@@ -2,17 +2,13 @@
   <step>
     <v-layout row wrap align-center>
       <v-flex xs12>
-        <p>Select on which client to perform the modifications.</p>
+        <p>Select on which client to perform the modifications. Set it to 0 to make changes on all clients.</p>
       </v-flex>
       <v-flex xs2>
         <v-text-field
           v-model="client"
           :label="label"
         ></v-text-field>
-      </v-flex>
-      <v-flex xs6 wrap offset-xs1
-        v-if="client == 0">
-        <p class="grey--text">will make changes on all clients if 0 selected</p>
       </v-flex>
     </v-layout>
   </step>
