@@ -4,7 +4,11 @@
       <v-container fluid fill-height>
           <v-layout align-center justify-center>
             <v-flex xs12 sm8>
-              <nuxt />
+              <v-card class="elevation-8">
+                <default-toolbar></default-toolbar>
+                <nuxt />
+                <default-card-actions></default-card-actions>
+              </v-card>
             </v-flex>
           </v-layout>
       </v-container>
@@ -13,6 +17,8 @@
 </template>
 
 <script>
+import DefaultToolbar from '~/components/DefaultToolbar'
+import DefaultCardActions from '~/components/DefaultCardActions'
 
 export default {
   data () {
@@ -22,6 +28,8 @@ export default {
   },
   name: 'App',
   components: {
+    DefaultToolbar,
+    DefaultCardActions
   }
 }
 </script>
