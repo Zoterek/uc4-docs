@@ -1,45 +1,44 @@
 <template>
-  <v-card-text>
-    <v-container fluid>
-      <v-layout align-center row>
-        <v-flex xs6>
-          <v-select
-            v-model="app"
-            :items="appNames"
-            label="Select App"
-            dense
-            required
-            :error="error"
-            :rules="appRules"></v-select>
+  <v-container fluid>
+    <v-layout align-center row fill-height>
+      <v-flex xs6>
+        <v-select
+          v-model="app"
+          :items="appNames"
+          label="Select App"
+          dense
+          required
+          :error="error"
+          :rules="appRules"></v-select>
+      </v-flex>
+      <transition name="fade">
+        <v-flex xs6 class="text-xs-right"
+          v-if="app">
+          <v-tooltip
+            top
+            v-for="external in selectedApp.external"
+            :key="external.name">
+            <v-btn class="grey--text"
+              icon
+              slot="activator"
+              :href="external.url">
+              <v-icon :class="external.icon"
+                ></v-icon>
+            </v-btn>
+            <span>{{ external.tooltip }}</span>
+          </v-tooltip>
         </v-flex>
-        <transition name="fade">
-          <v-flex xs6 class="text-xs-right"
-            v-if="app">
-            <v-tooltip
-              top
-              v-for="external in selectedApp.external"
-              :key="external.name">
-              <v-btn class="grey--text"
-                icon
-                slot="activator">
-                <v-icon :class="external.icon"
-                  ></v-icon>
-              </v-btn>
-              <span>{{ external.tooltip }}</span>
-            </v-tooltip>
-          </v-flex>
-        </transition>
-      </v-layout>
-      <v-layout class="description" row>
-        <v-slide-y-transition>
-          <v-flex
-            v-if="app">
-            <component :is="selectedApp.description"></component>
-          </v-flex>
-        </v-slide-y-transition>
-      </v-layout>
-    </v-container>
-  </v-card-text>
+      </transition>
+    </v-layout>
+    <v-layout class="description" row>
+      <v-slide-y-transition>
+        <v-flex
+          v-if="app">
+          <component :is="selectedApp.description"></component>
+        </v-flex>
+      </v-slide-y-transition>
+    </v-layout>
+  </v-container>
 </template>
 
 <style>
