@@ -1,5 +1,5 @@
 <template>
-  <v-app fill-height>
+  <v-app>
     <default-toolbar app></default-toolbar>
     <v-content app class="white">
         <v-layout row wrap fill-height align-content-space-between color="primary">
