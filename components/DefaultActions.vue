@@ -18,13 +18,16 @@ import step from '~/assets/step'
 export default {
   data() {
     return {
-      
+      isMounted: false // Workaround for breakpoints not working with nuxt.js - https://github.com/vuetifyjs/nuxt/issues/46#issue-337917319
     }
+  },
+  mounted() {
+    this.isMounted = true
   },
   computed: {
     step: step,
     sm: function() {
-      return this.$vuetify.breakpoint.smAndDown
+      return this.isMounted ? this.$vuetify.breakpoint.smAndDown : ''
     }
   },
   methods: {
