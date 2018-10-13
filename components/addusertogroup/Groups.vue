@@ -28,10 +28,10 @@ export default {
   computed: {
     groups: {
       get() {
-        return this.$store.state.userInput.groups
+        return this.$store.state.userData.groups
       },
       set(value) {
-        this.$store.commit('updateGroups', value)
+        this.$store.commit('userData/updateGroups', value)
       }
     }
   },

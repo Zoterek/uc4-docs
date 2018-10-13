@@ -27,10 +27,10 @@ export default {
   computed: {
     client: {
       get() {
-        return this.$store.state.userInput.client
+        return this.$store.state.userData.client
       },
       set(value) {
-        this.$store.commit('updateClient', value)
+        this.$store.commit('userData/updateClient', value)
       }
     }
   },

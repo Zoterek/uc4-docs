@@ -47,7 +47,9 @@ export default {
   },
   methods: {
     incrementStep: function() {
-      if(this.active < this.steps.length) {
+      if(this.active == this.steps.length) {
+        this.$router.push('addusertogroup/download')
+      } else {
         this.active++
       }
     },

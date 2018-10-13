@@ -28,10 +28,10 @@ export default {
   computed: {
     users: {
       get() {
-        return this.$store.state.userInput.users
+        return this.$store.state.userData.users
       },
       set(value) {
-        this.$store.commit('updateUsers', value)
+        this.$store.commit('userData/updateUsers', value)
       }
     }
   },
